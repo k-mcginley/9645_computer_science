@@ -179,6 +179,16 @@ Create an instance of a `Student` - using yourself as an example.
 ---
 
 **A:**
+```python
+class Student:
+	def __init__(self, dob):
+		self.__dob = dob
+		self.__class = "Computer Science"
+
+kate = Student("20.01.2009")
+
+print(kate._Student__dob, "is your date of birth.")
+```
 
 ---
 
