@@ -1,5 +1,8 @@
 {
   "enabledCssSnippets": [
     "slide-styles"
-  ]
+  ],
+  "accentColor": "#ea81c3",
+  "theme": "obsidian",
+  "cssTheme": ""
 }

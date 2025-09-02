@@ -37,7 +37,7 @@ Give another example program and suggest what might be represented as an object 
 
 ---
 
-**A:**
+**A:** 
 
 ---
 
