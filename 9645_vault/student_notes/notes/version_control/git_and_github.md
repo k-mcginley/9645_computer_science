@@ -14,6 +14,10 @@ must push in order to save changes to the remote repository
 - Allows us to keep work in versions
 - it saves changes as diffs (difference)
 
+## Github
+
+
+
 ## Stage, Commit, and Push 
 
 ### Terminal:
@@ -31,8 +35,11 @@ git push
 ### Obsidian:
 *using git plugin on obsidian*
 
-``` shell
+- open git source control panel
+- press plus button on the top to stage *all*
+- to stage individual files, press plus to the right of the file name
+- change the commit message (text input at top) to something useful
+- to commit, press the tick button
+- to push, press the up arrow button
+- to commit and sync in one step, press the arrow inside the circle
 
-```
-
-## Github
