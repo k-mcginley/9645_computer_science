@@ -270,6 +270,50 @@ Create getter methods so that every property contained within a given student ca
 ---
 
 **A:**
+``` python
+class Student:
+	def __init__(self, birth_date: str):
+		self.__birth_date = birth_date
+		self.__fav_subject = ""
+		self.__grades = []
+		self.__gpa = 0.0
+		self.__num_ecas = 0
+	
+	def get_favourite_subject(self) -> str:
+		return self.__fav_subject
+	
+	def set_favourite_subject(self, new_fav_subject: str):
+		if len(new_fav_subject) > 2:
+			self.__fav_subject = new_fav_subject
+		else:
+			print("Invalid subject.")
+	
+	def get_grades(self) -> list:
+		return self.grades
+		
+	def add_grade(self, grade: str):
+		self.__grades.append(grade)
+	
+	def get_ecas(self) -> int:
+		return self.__num_ecas
+	
+	def add_eca(self):
+		self.__num_ecas += 1
+		
+
+kate = Student("20.01.2009")
+kate.set_favourite_subject("Maths")
+kate.add_grade("9")
+kate.add_grade("8")
+kate.add_grade("9")
+kate.add_eca()
+kate.add_eca()
+
+print(kate._Student__birth_date, "is your date of birth.")
+print(kate._Student__fav_subject, "is your favourite subject.")
+print(", ".join(kate._Student__grades), "are your grades.")
+print(f"You take {kate._Student__num_ecas} ECAs.")
+```
 
 ---
 
