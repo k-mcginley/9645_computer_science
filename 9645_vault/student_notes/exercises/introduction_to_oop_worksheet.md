@@ -366,7 +366,7 @@ class Student:
 			print("Invalid subject.")
 	
 	def get_grades(self) -> list:
-		return self.grades
+		return self.__grades
 		
 	def add_grade(self, grade: str):
 		self.__grades.append(grade)
@@ -404,13 +404,14 @@ kate.add_grade("A*")
 kate.add_grade("A")
 kate.add_eca()
 kate.add_eca()
+grades = kate.get_grades()
 kate.calculate_gpa(grades)
 
 print(kate._Student__birth_date, "is your date of birth.")
 print(kate._Student__fav_subject, "is your favourite subject.")
 print(f"You take {kate._Student__num_ecas} ECAs.")
 print(", ".join(kate._Student__grades), "are your grades.")
-print("Your GPA is", kate.Student__gpa)
+print("Your GPA is", kate._Student__gpa)
 
 ```
 
