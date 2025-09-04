@@ -451,6 +451,105 @@ Implement getters / setters for the new properties as required.
 ---
 
 **A:**
+``` python
+
+class Student:
+	def __init__(self, birth_date: str):
+		self.__birth_date = birth_date
+		self.__fav_subject = ""
+		self.__grades = []
+		self.__gpa = 0.0
+		self.__num_ecas = 0
+		self.__student_id = ""
+	
+	def get_favourite_subject(self) -> str:
+		return self.__fav_subject
+	
+	def set_favourite_subject(self, new_fav_subject: str):
+		if len(new_fav_subject) > 2:
+			self.__fav_subject = new_fav_subject
+		else:
+			print("Invalid subject.")
+	
+	def get_grades(self) -> list:
+		return self.__grades
+		
+	def add_grade(self, grade: str):
+		self.__grades.append(grade)
+	
+	def get_ecas(self) -> int:
+		return self.__num_ecas
+	
+	def add_eca(self):
+		self.__num_ecas += 1
+		
+	def get_gpa(self) -> float:
+		return self.__gpa
+		
+	def calculate_gpa(self, grades):
+		point_scores = []
+		for grade in grades:
+			if grade == "A*":
+				point_scores.append(4.0)
+			elif grade == "A":
+				point_scores.append(3.2)
+			elif grade == "B":
+				point_scores.append(2.6)
+			elif grade == "C":
+				point_scores.append(1.8)
+			elif grade == "D":
+				point_scores.append(1.0)
+			elif grade == "E":
+				point_scores.append(0.2)
+			else:
+				point_scores.append(0.0)
+		gpa = sum(point_scores)/len(point_scores)
+		self.__gpa = gpa
+		
+	def get_student_id(self) -> str:
+		return self.__student_id
+		
+	def set_student_id(self, new_id: str):
+		if len(new_id) == 5 and new_id[:2].isalpha():
+			self.__student_id = new_id
+		else:
+			print("Invalid ID number.")
+			
+	def get_year_group(self) -> int:
+		return self.year_group
+		
+	def set_year_group(self, year: int):
+		self.year_group = year
+		
+	def get_phone_number(self) -> str:
+		return self._phone_number
+		
+	def set_phone_number(self, number: str):
+		self._phone_number = number
+
+kate = Student("20.01.2009")
+kate.set_favourite_subject("Maths")
+kate.add_grade("A*")
+kate.add_grade("A*")
+kate.add_grade("A")
+kate.add_eca()
+kate.add_eca()
+grades = kate.get_grades()
+kate.calculate_gpa(grades)
+kate.set_student_id("KM210")
+kate.set_year_group(12)
+kate.set_phone_number("12345678")
+
+print(kate._Student__birth_date, "is your date of birth.")
+print(kate._Student__fav_subject, "is your favourite subject.")
+print(f"You take {kate._Student__num_ecas} ECAs.")
+print(", ".join(kate._Student__grades), "are your grades.")
+print("Your GPA is", kate._Student__gpa)
+print("Your ID number is", kate._Student__student_id)
+print("Your year group is", kate.year_group)
+print("Your phone number is", kate._phone_number)
+
+```
 
 ---
 
